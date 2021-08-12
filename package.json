@@ -1,0 +1,110 @@
+{
+  "name": "eth_gas_redux",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@reduxjs/toolkit": "^1.6.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.20.19",
+    "@types/react": "^16.14.13",
+    "@types/react-dom": "^16.9.14",
+    "@types/react-redux": "^7.1.18",
+    "axios": "^0.21.1",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-scripts": "4.0.3",
+    "typescript": "~4.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "reformat": "eslint --fix \"src/**/*.{ts,tsx}\"; prettier --parser typescript --write \"src/**/*.{ts,tsx}\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "prettier"
+    ],
+    "rules": {
+      "camelcase": "error",
+      "default-case": "error",
+      "default-case-last": "error",
+      "default-param-last": "error",
+      "eqeqeq": "error",
+      "id-denylist": [
+        "error",
+        "e"
+      ],
+      "import/newline-after-import": "error",
+      "import/no-unresolved": "off",
+      "import/order": [
+        "error",
+        {
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          },
+          "groups": [
+            "builtin",
+            "external",
+            "internal"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "src/**",
+              "group": "external",
+              "position": "after"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": [
+            "builtin"
+          ],
+          "newlines-between": "always"
+        }
+      ],
+      "no-alert": "error",
+      "no-console": "warn",
+      "no-eval": "error",
+      "no-shadow": "error",
+      "react/jsx-sort-props": [
+        "warn",
+        {
+          "reservedFirst": true
+        }
+      ],
+      "react-hooks/exhaustive-deps": "error",
+      "vars-on-top": "error",
+      "@typescript-eslint/explicit-module-boundary-types": [
+        "warn",
+        {
+          "allowArgumentsExplicitlyTypedAsAny": true
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
