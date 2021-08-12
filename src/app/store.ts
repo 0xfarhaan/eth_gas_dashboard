@@ -1,7 +1,14 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+
+import { etherscanApi } from "src/features/etherscanApi";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    [etherscanApi.reducerPath]: etherscanApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(etherscanApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
@@ -12,3 +19,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+setupListeners(store.dispatch);
